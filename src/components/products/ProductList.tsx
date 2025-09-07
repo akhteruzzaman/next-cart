@@ -4,6 +4,7 @@
 import { useEffect } from "react";
 import { fetchProducts } from "../../redux/productSlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import AddToCartButton from "./AddToCartButton";
 import type { Product } from "../../types/Product";
 import Image from "next/image";
 
@@ -35,9 +36,7 @@ export default function ProductList() {
           />
           <h3 className="font-bold mt-2 text-sm">{product.title}</h3>
           <p className="text-gray-600">${product.price}</p>
-          <button className="mt-2 bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">
-            Add to Cart
-          </button>
+          <AddToCartButton product={product} />
         </div>
       ))}
     </main>
